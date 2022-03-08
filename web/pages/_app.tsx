@@ -1,6 +1,6 @@
 // pages/_app.tsx
 
-import {ReactElement, ReactNode, useEffect} from 'react'
+import React, {ReactElement, ReactNode, useEffect} from 'react'
 import type {NextPage} from 'next'
 import type {AppProps} from 'next/app'
 import '../styles/styles.scss'
