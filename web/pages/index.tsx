@@ -18,14 +18,13 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
 
   return (
     <>
-      <Container wrapperClass="vh-100-w-nav pb-0" className="h-100 text-center d-flex flex-column justify-content-end">
+      <Container wrapperClass="vh-100-w-nav pb-0" className="h-100 d-flex flex-column justify-content-center">
         <HeroHeader 
-          img={'/220308-portrait.png'} 
-          preTitle={'Hello, I\'m Jesse'}
-          title={'I build modern web applications to empower businesses.'}
+          title={'One Sticker to protect our planet'}
+          subtitle={'ecotowari is a green initiative to reduce paper waste. Our goal is to free your mailbox from unsolicited flyers. Think of it as a real-life spam filter!'}
         />
         <div className="bg-image-wrapper">        
-          <Image src={'/bg-wood.png'} layout="fill" objectFit={'contain'} alt="Background" quality={50} priority={true} />
+          {/* <Image src={'/bg-wood.png'} layout="fill" objectFit={'contain'} alt="Background" quality={50} priority={true} /> */}
         </div>
 
       </Container>

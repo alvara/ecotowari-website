@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 export default function HeroHeader({preTitle, title, subtitle, date, tags = [], img, orientation = 'portrait'}) {
   return (
     <div className="row">
-      <div className="mx-auto col-10">
+      <div className="col-10">
 
        {preTitle && (
          <span className='preTitle'>{preTitle}</span>
