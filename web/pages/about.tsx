@@ -17,7 +17,7 @@ const About = ({posts}) => {
         <div>
       <HeroHeader 
         title={'About'}
-        subtitle={'A collection of my written articles'}
+        subtitle={'Feed of news articles will go here'}
       />
    <Container className='text-center'>
       <div className='row row-cols-md-2 row-cols-lg-3'>

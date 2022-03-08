@@ -15,16 +15,16 @@ export default function Navbar() {
             </ul>
             <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                    <Link href="/get-sticker/"><a className="nav-link">Get Sticker</a></Link>
+                    <Link href="/get-sticker"><a className="nav-link">Get Sticker</a></Link>
                 </li>
                  <li className="nav-item active">
                      <Link href="/about"><a className="nav-link">About</a></Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/news/"><a className="nav-link">News</a></Link>
+                    <Link href="/news"><a className="nav-link">News</a></Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/news/"><a className="nav-link">Contact</a></Link>
+                    <Link href="/contact"><a className="nav-link">Contact</a></Link>
                 </li>
             </ul>
         </div>

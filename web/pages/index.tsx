@@ -12,6 +12,7 @@ import MySkills from '../modules/sections/MySkills'
 // import ContactMe from '../modules/sections/ContactMe'
 import Container from '../common/Container'
 import Image from "next/image"
+import Link from "next/link"
 
 // index.js
 export default function Index({posts, portfolio, tags, showcaseTags}) {
@@ -23,6 +24,9 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
           title={'One Sticker to protect our planet'}
           subtitle={'ecotowari is a green initiative to reduce paper waste. Our goal is to free your mailbox from unsolicited flyers. Think of it as a real-life spam filter!'}
         />
+        
+        <Link href={'/get-sticker'}><button className='btn'>Get a Sticker</button></Link>
+
         <div className="bg-image-wrapper">        
           {/* <Image src={'/bg-wood.png'} layout="fill" objectFit={'contain'} alt="Background" quality={50} priority={true} /> */}
         </div>

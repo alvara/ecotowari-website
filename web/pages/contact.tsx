@@ -17,7 +17,7 @@ const Contact = ({posts}) => {
         <div>
       <HeroHeader 
         title={'Contact'}
-        subtitle={'A collection of my written articles'}
+        subtitle={'contact details goes here'}
       />
    <Container className='text-center'>
       <div className='row row-cols-md-2 row-cols-lg-3'>

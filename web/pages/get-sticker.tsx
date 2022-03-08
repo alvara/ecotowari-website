@@ -16,8 +16,8 @@ const GetSticker = ({posts}) => {
       <Container wrapperClass="vh-100-w-nav" className="h-100 text-center">
         <div>
       <HeroHeader 
-        title={'GetSticker'}
-        subtitle={'A collection of my written articles'}
+        title={'Get Sticker'}
+        subtitle={'Subtitle goes here'}
       />
    <Container className='text-center'>
       <div className='row row-cols-md-2 row-cols-lg-3'>
