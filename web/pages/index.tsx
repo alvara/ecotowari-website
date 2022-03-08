@@ -7,8 +7,7 @@ import MainLayout from '../modules/layouts/mainLayout'
 import HeroHeader from '../modules/sections/HeroHeader'
 import AboutUs from '../modules/sections/AboutUs'
 import Statistics from '../modules/sections/Statistics'
-import LatestPosts from '../modules/sections/LatestPosts'
-import MySkills from '../modules/sections/MySkills'
+
 // import ContactMe from '../modules/sections/ContactMe'
 import Container from '../common/Container'
 import Link from "next/link"
@@ -34,8 +33,8 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
       </Container>
       <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><AboutUs /></Container>
       <Container wrapperClass="min-h-100"><Statistics portfolio={portfolio} tags={tags}/></Container>
-      <Container wrapperClass="d-flex align-items-center bg-2"><LatestPosts posts={posts} /></Container>
-      <Container wrapperClass="min-h-100 d-flex align-items-center"><MySkills tags={showcaseTags}/></Container>
+      {/* <Container wrapperClass="d-flex align-items-center bg-2"><LatestPosts posts={posts} /></Container> */}
+      {/* <Container wrapperClass="min-h-100 d-flex align-items-center"><MySkills tags={showcaseTags}/></Container> */}
       {/* <Container wrapperClass="vh-100" className="h-100"><ContactMe /></Container> */}
     </>
   )
