@@ -16,7 +16,7 @@ const About = ({posts}) => {
       <Container wrapperClass="vh-100-w-nav" className="h-100 text-center">
         <div>
       <HeroHeader 
-        title={'About'}
+        title={'Our Mission'}
         subtitle={'Feed of news articles will go here'}
       />
    <Container className='text-center'>
