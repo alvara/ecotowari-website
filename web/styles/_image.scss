@@ -1,0 +1,33 @@
+.image-container {
+  overflow: hidden;
+  position: relative;
+  border-radius: 32px !important;
+  // height only for portrait images (by default)
+  height: 54vh;
+
+    // height specifically for landscape images
+    &.landscape {
+      height: 40vh;
+
+        @include media-breakpoint-only(md) {
+          height: 30vh;
+        }
+        @include media-breakpoint-only(xs) {
+          height: 25vh;
+
+        }
+    }
+
+  @include media-breakpoint-only(xs) {
+    // add min height so blog banners can scale down
+    height: 40vh;
+  }
+
+  .image {
+    height: unset !important;
+  }
+}
+
+.bg-image-wrapper {
+  z-index: -1;
+}

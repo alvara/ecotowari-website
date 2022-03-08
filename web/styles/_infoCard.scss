@@ -1,0 +1,63 @@
+.infoCard-wrapper {
+  text-decoration: none;
+  color: inherit;
+  
+  &:hover {
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.infoCard {
+  display: block;
+
+  img {
+    border-radius: 16px;
+  }
+
+  h5 {
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  // add to infoBox to transform into a Porfolio Card
+  &.portfolioCard {
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid $border-color;  
+
+
+    .infoCard-content {
+      padding: 16px;
+
+    }
+  }
+
+  // add to infoBox to transform into a Post Card for your blog
+  &.postCard {
+    border: 1px solid $border-color;  
+    background-color: white;
+    border-radius: 16px;
+    margin: 0;
+    padding: 0;
+
+    img {
+      border-radius: 16px 16px 0 0;
+    }
+  
+
+    .infoCard-content {
+      padding: 16px;
+    }
+  }
+
+} 
+
+
+
+// add to disable links on cards
+.disable-link {
+  pointer-events: none;
+}

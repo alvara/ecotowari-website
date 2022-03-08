@@ -1,0 +1,32 @@
+nav {
+  // background-color: $primary-color;
+  // color: $white;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+
+  // text in nav
+  .navbar-brand, a.nav-link {
+    font-size: 1rem;
+    font-weight: 900;
+    color: $primary;
+    font-family: 'Work Sans', Sans-Serif;
+  }
+}
+ 
+// make vh 100 including navbar
+.vh-100-w-nav {
+  height: calc(100vh - ($nav-link-height + $nav-link-padding-y * 2))
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent;
+
+  &:focus, &:hover {
+    border-color: transparent;
+  }
+}
+
+#collapseNavbar {
+  text-align: center;
+}

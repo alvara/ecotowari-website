@@ -1,0 +1,32 @@
+.pill {
+  background-color: darken($secondary, 6%);
+  color: #fff;
+  display: inline-block;
+  margin: 6px 6px;
+  padding: 4px 12px;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: darken($secondary, 15%);
+    cursor: pointer;
+  }
+
+  &.active {
+    background-color: $primary;
+  }
+  
+  &.mini {
+    background-color: $primary;
+    color: $gray-200;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    margin: 3px;
+  }
+  // prevent user from selecting pill content
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
