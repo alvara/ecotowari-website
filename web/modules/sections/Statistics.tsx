@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 
 import InfoCard from '../widgets/InfoCard'
-export default function Portfolio({portfolio, tags}) {
+export default function Statistics({portfolio, tags}) {
 
   const [selected, setSelected] = useState("_featured")
 
@@ -15,8 +15,8 @@ export default function Portfolio({portfolio, tags}) {
 
   return (
     <div id="portfolio" className="h-100 text-center d-flex flex-column justify-content-center">
-    <span className='preTitle'>My Portfolio</span>
-    <h2>Projects I have Worked On</h2>
+    <span className='preTitle'>Ecotowari in Numbers</span>
+    <h2>Check how much resources have saved with ecotowari sticker!</h2>
     <div className='row'>
       <div className='col'>
           {tags.length > 0 && tags.map(
@@ -37,7 +37,7 @@ export default function Portfolio({portfolio, tags}) {
   )
 }
 
-Portfolio.propTypes = {
+Statistics.propTypes = {
   // Portfolio Tags
   portfolio: PropTypes.arrayOf(PropTypes.object),
   tags: PropTypes.arrayOf(PropTypes.object)

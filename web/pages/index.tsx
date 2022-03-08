@@ -5,8 +5,8 @@ import groq from 'groq'
 
 import MainLayout from '../modules/layouts/mainLayout'
 import HeroHeader from '../modules/sections/HeroHeader'
-import Philosophy from '../modules/sections/Philosophy'
-import Portfolio from '../modules/sections/Portfolio'
+import AboutUs from '../modules/sections/AboutUs'
+import Statistics from '../modules/sections/Statistics'
 import LatestPosts from '../modules/sections/LatestPosts'
 import MySkills from '../modules/sections/MySkills'
 // import ContactMe from '../modules/sections/ContactMe'
@@ -32,8 +32,8 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
         </div>
 
       </Container>
-      <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><Philosophy /></Container>
-      <Container wrapperClass="min-h-100"><Portfolio portfolio={portfolio} tags={tags}/></Container>
+      <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><AboutUs /></Container>
+      <Container wrapperClass="min-h-100"><Statistics portfolio={portfolio} tags={tags}/></Container>
       <Container wrapperClass="d-flex align-items-center bg-2"><LatestPosts posts={posts} /></Container>
       <Container wrapperClass="min-h-100 d-flex align-items-center"><MySkills tags={showcaseTags}/></Container>
       {/* <Container wrapperClass="vh-100" className="h-100"><ContactMe /></Container> */}
