@@ -15,7 +15,7 @@ export default function Navbar() {
             </ul>
             <ul className="navbar-nav ms-auto">
                  <li className="nav-item active">
-                     <Link href="/about"><a className="nav-link">Our Mission</a></Link>
+                     <Link href="/mission"><a className="nav-link">Our Mission</a></Link>
                 </li>
                 <li className="nav-item">
                     <Link href="/get-sticker"><a className="nav-link">Get Sticker</a></Link>
