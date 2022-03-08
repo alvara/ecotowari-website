@@ -2,15 +2,17 @@ import PropTypes from "prop-types"
 import React, {ReactElement} from "react"
 import client from '../client'
 import groq from 'groq'
+import Container from '../common/Container'
+import Link from "next/link"
 
 import MainLayout from '../modules/layouts/mainLayout'
 import HeroHeader from '../modules/sections/HeroHeader'
-import AboutUs from '../modules/sections/AboutUs'
+import AboutEcotowari from '../modules/sections/AboutEcotowari'
 import Statistics from '../modules/sections/Statistics'
-
-// import ContactMe from '../modules/sections/ContactMe'
-import Container from '../common/Container'
-import Link from "next/link"
+import EnvironmentImpact from "../modules/sections/EnvironmentImpact"
+import GetStickerCTA from "../modules/sections/GetStickerCTA"
+import LatestNews from "../modules/sections/LatestNews"
+import FollowUs from "../modules/sections/FollowUs"
 
 // index.js
 export default function Index({posts, portfolio, tags, showcaseTags}) {
@@ -31,9 +33,12 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
           </div>
         </div>
       </Container>
-      <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><AboutUs /></Container>
+      <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><AboutEcotowari /></Container>
+      <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><EnvironmentImpact /></Container>
       <Container wrapperClass="min-h-100"><Statistics portfolio={portfolio} tags={tags}/></Container>
-      {/* <Container wrapperClass="d-flex align-items-center bg-2"><LatestPosts posts={posts} /></Container> */}
+      <Container wrapperClass="min-h-100"><GetStickerCTA/></Container>
+      <Container wrapperClass="d-flex align-items-center bg-2"><LatestNews posts={posts} /></Container>
+      <Container wrapperClass="d-flex align-items-center bg-2"><FollowUs/></Container>
       {/* <Container wrapperClass="min-h-100 d-flex align-items-center"><MySkills tags={showcaseTags}/></Container> */}
       {/* <Container wrapperClass="vh-100" className="h-100"><ContactMe /></Container> */}
     </>

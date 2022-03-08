@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import InfoCard from '../widgets/InfoCard'
 import Link from 'next/link'
 
-export default function LatestPosts({posts}) {
+export default function LatestNews({posts}) {
   return (
     <div className='text-center'>
       <span className='preTitle'>Blog</span>
@@ -32,6 +32,6 @@ export default function LatestPosts({posts}) {
   )
 }
 
-LatestPosts.propTypes = {
+LatestNews.propTypes = {
   posts : PropTypes.arrayOf(PropTypes.object)
 }
