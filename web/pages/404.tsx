@@ -1,4 +1,4 @@
-import type {ReactElement} from 'react'
+import React, {ReactElement} from 'react'
 import MainLayout from '../modules/layouts/mainLayout'
 import Container from '../common/Container'
 import HeroHeader from '../modules/sections/HeroHeader'

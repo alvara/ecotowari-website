@@ -1,4 +1,4 @@
-import type {ReactElement} from 'react'
+import React, {ReactElement} from 'react'
 import groq from 'groq'
 import PropTypes from "prop-types"
 
