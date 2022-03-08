@@ -24,7 +24,7 @@ export default function Navbar() {
                     <Link href="/news"><a className="nav-link">Latest News</a></Link>
                 </li>
                 <li className="nav-item">
-                    <Link href="/contact"><a className="nav-link">Meet the Team</a></Link>
+                    <Link href="/team"><a className="nav-link">Meet the Team</a></Link>
                 </li>
             </ul>
         </div>
