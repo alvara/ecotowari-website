@@ -10,7 +10,7 @@ export default function MainLayout({children}) {
   return (
     <>
       <Head>
-      <title>Home | Jesse Alvarado</title>
+      <title>Home | Ecotowari</title>
       </Head>
       <Navbar/>
       <main>{children}</main>
