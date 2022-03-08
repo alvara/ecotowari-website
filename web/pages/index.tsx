@@ -20,6 +20,7 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
   return (
     <>
       <Container wrapperClass="vh-100-w-nav pb-0" className="h-100 d-flex flex-column justify-content-center">
+        <>
         <HeroHeader 
           title={'One Sticker to protect our planet'}
           subtitle={'ecotowari is a green initiative to reduce paper waste. Our goal is to free your mailbox from unsolicited flyers. Think of it as a real-life spam filter!'}
@@ -30,7 +31,7 @@ export default function Index({posts, portfolio, tags, showcaseTags}) {
         <div className="bg-image-wrapper">        
           {/* <Image src={'/bg-wood.png'} layout="fill" objectFit={'contain'} alt="Background" quality={50} priority={true} /> */}
         </div>
-
+        </>
       </Container>
       <Container wrapperClass="min-h-100 d-flex align-items-center bg-2"><AboutUs /></Container>
       <Container wrapperClass="min-h-100"><Statistics portfolio={portfolio} tags={tags}/></Container>
