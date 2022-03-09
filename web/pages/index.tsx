@@ -62,6 +62,7 @@ Index.propTypes = {
   showcaseTags: PropTypes.arrayOf(PropTypes.object),
 }
 
+// get static generated content
 export async function getStaticProps() {
   // query for blog posts 
   const posts = await client.fetch(groq`
