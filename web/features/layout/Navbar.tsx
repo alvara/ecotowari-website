@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import React from 'react'
-import {useRouter} from 'next/router'
-import cookieCutter from 'cookie-cutter'
-import Image from 'next/image'
+import Link from 'next/link';
+import React from 'react';
+import { useRouter } from 'next/router';
+import cookieCutter from 'cookie-cutter';
+import Image from 'next/image';
 
 export default function Navbar() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <nav className="navbar navbar-expand-md navbar-light">
@@ -38,17 +38,23 @@ export default function Navbar() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item ">
               <Link href="/mission">
-                <a className="nav-link">{router.locale === 'ja' ? 'Our Mission' : 'Our Mission'}</a>
+                <a className="nav-link">
+                  {router.locale === 'ja' ? 'Our Mission' : 'Our Mission'}
+                </a>
               </Link>
             </li>
             <li className="nav-item ">
               <Link href="/the-problem">
-                <a className="nav-link">{router.locale === 'ja' ? 'The Problem' : 'The Problem'}</a>
+                <a className="nav-link">
+                  {router.locale === 'ja' ? 'The Problem' : 'The Problem'}
+                </a>
               </Link>
             </li>
             <li className="nav-item ">
               <Link href="/about-us" passHref>
-                <a className="nav-link">{router.locale === 'ja' ? 'About Us' : 'About Us'}</a>
+                <a className="nav-link">
+                  {router.locale === 'ja' ? 'About Us' : 'About Us'}
+                </a>
               </Link>
             </li>
 
@@ -59,7 +65,9 @@ export default function Navbar() {
             </li> */}
             <li className="nav-item">
               <Link href="/contact">
-                <a className="nav-link">{router.locale === 'ja' ? '問い合わせ' : 'Contact'}</a>
+                <a className="nav-link">
+                  {router.locale === 'ja' ? '問い合わせ' : 'Contact'}
+                </a>
               </Link>
             </li>
             <li className="nav-item">
@@ -74,7 +82,11 @@ export default function Navbar() {
                 <a
                   className="nav-link"
                   onClick={() => {
-                    cookieCutter.set('NEXT_LOCALE', 'ja', new Date(999999999999))
+                    cookieCutter.set(
+                      'NEXT_LOCALE',
+                      'ja',
+                      new Date(999999999999)
+                    );
                   }}
                 >
                   JP
@@ -86,7 +98,7 @@ export default function Navbar() {
                 <a
                   className="nav-link"
                   onClick={() => {
-                    cookieCutter.set('NEXT_LOCALE', 'en')
+                    cookieCutter.set('NEXT_LOCALE', 'en');
                   }}
                 >
                   EN
@@ -97,5 +109,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

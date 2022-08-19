@@ -11,6 +11,7 @@ import Statistics from '../features/sections/Statistics';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
 import FollowUs from '../features/sections/FollowUs';
 import SentenceSummary from '../features/sections/SentenceSummary';
+import axios from 'axios';
 
 // Get the main template for standard pages
 Index.getLayout = function getStaticProps(page: ReactElement) {

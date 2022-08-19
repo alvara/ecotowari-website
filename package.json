@@ -19,10 +19,7 @@
     "lerna": "^4.0.0",
     "prettier": "^2.7.1"
   },
-  "dependencies": {
-    "airtable": "^0.11.4",
-    "axios": "^0.27.2"
-  },
+  "dependencies": {},
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint",
     "*.{ts,tsx}": "bash -c 'npm run lint:types'",

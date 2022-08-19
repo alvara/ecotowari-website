@@ -17,6 +17,7 @@ airtableClient('Stickers')
           id: fields.Id as number,
           qty: (fields.Quantity as number) || 0,
           created: new Date(fields.Created as string),
+          started: fields.Started ? new Date(fields.Started as string) : null,
           notes: (fields.Notes as string) || '',
         });
       });

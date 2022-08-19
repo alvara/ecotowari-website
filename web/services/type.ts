@@ -1,10 +1,11 @@
 export interface ISticker {
-  id: number
-  qty: number
-  created: Date
-  notes?: string
+  id: number;
+  qty: number;
+  created: Date;
+  started: Date;
+  notes?: string;
   createdBy?: {
-    id: string
-    name: string
-  }
+    id: string;
+    name: string;
+  };
 }
