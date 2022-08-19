@@ -11,4 +11,4 @@
 # Local Netlify folder
 .netlify
 
-.env.local
+/web/.env.local
