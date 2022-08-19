@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'next/link'
+import Image from 'next/image';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 // Define Proptypes for PortfolioItem Component
 IndexHeader.propTypes = {
@@ -13,8 +13,7 @@ IndexHeader.propTypes = {
   img: PropTypes.string,
   buttonPath: PropTypes.string,
   buttonText: PropTypes.string,
-  textAlign: PropTypes.string,
-}
+};
 
 export default function IndexHeader({
   preTitle,
@@ -23,7 +22,6 @@ export default function IndexHeader({
   date,
   tags = [],
   img,
-  textAlign = 'start', // align text to center or left. left by default
   buttonPath = '/',
   buttonText,
 }) {
@@ -69,5 +67,5 @@ export default function IndexHeader({
       </div>
       <div className="bg-overlay"></div>
     </div>
-  )
+  );
 }

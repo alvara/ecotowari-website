@@ -1,88 +1,60 @@
-import PropTypes from 'prop-types'
-import React, {ReactElement} from 'react'
-import client from '../client'
-import groq from 'groq'
-import Container from '../components/Container'
-import Supabase from '../utils/supabase'
-import {useRouter} from 'next/router'
-// import Instagram from 'instagram-web-api'
-import MainLayout from '../features/layout/mainLayout'
-import IndexHeader from '../components/header/IndexHeader'
-import Statistics from '../features/sections/Statistics'
-import GetStickerCTA from '../features/sections/GetStickerCTA'
-// import LatestNews from "../modules/sections/LatestNews"
-import FollowUs from '../features/sections/FollowUs'
-import SentenceSummary from '../features/sections/SentenceSummary'
+import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
+import client from '../client';
+import groq from 'groq';
+import Container from '../components/Container';
+import Supabase from '../utils/supabase';
+import { useRouter } from 'next/router';
+import MainLayout from '../features/layout/mainLayout';
+import IndexHeader from '../components/header/IndexHeader';
+import Statistics from '../features/sections/Statistics';
+import GetStickerCTA from '../features/sections/GetStickerCTA';
+import FollowUs from '../features/sections/FollowUs';
+import SentenceSummary from '../features/sections/SentenceSummary';
 
 // Get the main template for standard pages
 Index.getLayout = function getStaticProps(page: ReactElement) {
-  return <MainLayout>{page}</MainLayout>
-}
+  return <MainLayout>{page}</MainLayout>;
+};
 
 export async function getStaticProps() {
   // query for home page content
   const homePage = await client.fetch(groq`
       *[_type == "home-page"]{'aboutImage': aboutsection.image.asset->url, ...} | order(publishedAt desc)
-    `)
-
-  // Query For news posts
-  // const portfolio = await client.fetch(groq`
-  //   *[_type == "portfolio"]{
-  //     _id,
-  //     title,
-  //     summary,
-  //     slug,
-  //     "mainImage": mainImage.asset->url,
-  //     "tags": tag[]->{
-  //       title,
-  //       slug,
-  //       _id,
-  //       showcase,
-  //       "image" : image.asset->url
-  //     },
-  //     "tagList": tag[]->slug
-  //   } | order(publishedAt desc)
-  // `)
-
-  // // login to instagram
-  // const username = process.env.INSTAGRAM_USERNAME
-  // const password = process.env.INSTAGRAM_PSW
-  // const igClient = new Instagram({username, password})
-  // await igClient.login()
-
-  // // get latest instagram Posts
-  // const igPosts = await igClient.getPhotosByUsername({
-  //   username: process.env.INSTAGRAM_USERNAME,
-  //   first: 8,
-  // })
+    `);
 
   // sticker data from supabase
-  const {data: stickers, error} = await Supabase.from('stickers').select('qty, started_at')
+  const { data: stickers, error } = await Supabase.from('stickers').select(
+    'qty, started_at'
+  );
   if (error) {
-    throw new Error(error.message)
+    throw new Error(error.message);
   }
 
   return {
     props: {
       stickers,
       homePage,
-      // igPosts: igPosts.user.edge_owner_to_timeline_media.edges || []
     },
-  }
+  };
 }
 
 Index.propTypes = {
   homePage: PropTypes.arrayOf(PropTypes.object),
-  posts: PropTypes.arrayOf(PropTypes.object),
   stickers: PropTypes.arrayOf(PropTypes.object),
-  igPosts: PropTypes.arrayOf(PropTypes.object),
-}
+};
 
-export default function Index({posts, stickers, igPosts, homePage}) {
-  const router = useRouter()
+export default function Index({ stickers, homePage }) {
+  const router = useRouter();
 
   // deconstruct data for each section in the page
-  const {headersection, aboutsection, statisticsection, ctasection, followsection} = homePage[0]
+  const {
+    headersection,
+    // aboutsection,
+    statisticsection,
+    ctasection,
+    followsection,
+  } = homePage[0];
 
   return (
     <>
@@ -98,7 +70,7 @@ export default function Index({posts, stickers, igPosts, homePage}) {
 
       {/* 1 Sentence Summary */}
       <Container wrapperClass="d-flex align-items-center bg-1">
-        <SentenceSummary data={aboutsection} />
+        <SentenceSummary />
       </Container>
 
       {/* Ecotowari Positive Impact */}
@@ -118,5 +90,5 @@ export default function Index({posts, stickers, igPosts, homePage}) {
 
       {/* <Container wrapperClass="d-flex align-items-center bg-2"><LatestNews posts={posts} /></Container> */}
     </>
-  )
+  );
 }

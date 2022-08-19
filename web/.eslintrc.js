@@ -1,17 +1,19 @@
 module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   extends: [
     'next',
+    'next/core-web-vitals',
     'standard',
     'standard-react',
     'prettier',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   rules: {
-    'object-curly-spacing': ['error', 'never'],
-    'comma-dangle': 0,
-    '@next/next/no-img-element': 0,
-    '@next/next/no-html-link-for-pages': 'off',
+    '@next/next/no-img-element': 'off',
   },
-}
+};

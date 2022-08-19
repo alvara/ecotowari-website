@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {useRouter} from 'next/router'
-import Image from 'next/image'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 GetStickerCTA.propTypes = {
   data: PropTypes.object,
-}
+};
 
-export default function GetStickerCTA({data}) {
-  const router = useRouter()
+export default function GetStickerCTA({ data }) {
+  const router = useRouter();
 
   const url =
-    'https://ecotowari.us14.list-manage.com/subscribe/post?u=fb888509b6f45d3e61ff06e47&amp;id=5ec65eaa39'
+    'https://ecotowari.us14.list-manage.com/subscribe/post?u=fb888509b6f45d3e61ff06e47&amp;id=5ec65eaa39';
 
   return (
     <div id="sticker" className="row">
@@ -38,5 +38,5 @@ export default function GetStickerCTA({data}) {
       </div>
       <div className="bg-overlay"></div>
     </div>
-  )
+  );
 }
