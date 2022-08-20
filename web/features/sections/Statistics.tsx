@@ -17,14 +17,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import useSWR from 'swr';
 import { ISticker } from '../../services/type';
-import { getStickers } from '../../services/repository/getStickers';
 import axios from 'axios';
 
 interface IStatistics {
   stickers: ISticker[];
 }
 
-export default function Statistics({ stickers }) {
+export default function Statistics({ stickers }: IStatistics) {
   const router = useRouter();
 
   const { data } = useSWR(

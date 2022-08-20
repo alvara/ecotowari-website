@@ -3,7 +3,6 @@ import React, { ReactElement } from 'react';
 import client from '../client';
 import groq from 'groq';
 import Container from '../components/Container';
-import Supabase from '../utils/supabase';
 import { useRouter } from 'next/router';
 import MainLayout from '../features/layout/mainLayout';
 import IndexHeader from '../components/header/IndexHeader';
@@ -11,7 +10,6 @@ import Statistics from '../features/sections/Statistics';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
 import FollowUs from '../features/sections/FollowUs';
 import SentenceSummary from '../features/sections/SentenceSummary';
-import axios from 'axios';
 import { getStickers } from '../services/repository/getStickers';
 
 // Get the main template for standard pages
