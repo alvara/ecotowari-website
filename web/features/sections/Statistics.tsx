@@ -18,6 +18,7 @@ import {
 import useSWR from 'swr';
 import { ISticker } from '../../services/type';
 import { getStickers } from '../../services/repository/getStickers';
+import axios from 'axios';
 
 interface IStatistics {
   stickers: ISticker[];
@@ -26,10 +27,15 @@ interface IStatistics {
 export default function Statistics({ stickers }) {
   const router = useRouter();
 
-  const { data } = useSWR('/api/stickers/', getStickers, {
-    fallbackData: stickers,
-    refreshInterval: 3000,
-  });
+  const { data } = useSWR(
+    '/api/stickers/',
+    () => {
+      return axios.get('/api/stickers/').then((res) => res.data);
+    },
+    {
+      fallbackData: stickers,
+    }
+  );
 
   return (
     <div id="portfolio" className="h-100 text-center justify-content-center">
