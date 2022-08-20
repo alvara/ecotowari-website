@@ -12,6 +12,7 @@ import GetStickerCTA from '../features/sections/GetStickerCTA';
 import FollowUs from '../features/sections/FollowUs';
 import SentenceSummary from '../features/sections/SentenceSummary';
 import axios from 'axios';
+import { getStickers } from '../services/repository/getStickers';
 
 // Get the main template for standard pages
 Index.getLayout = function getStaticProps(page: ReactElement) {
@@ -24,19 +25,15 @@ export async function getStaticProps() {
       *[_type == "home-page"]{'aboutImage': aboutsection.image.asset->url, ...} | order(publishedAt desc)
     `);
 
-  // sticker data from supabase
-  const { data: stickers, error } = await Supabase.from('stickers').select(
-    'qty, started_at'
-  );
-  if (error) {
-    throw new Error(error.message);
-  }
+  const stickers = await getStickers();
+  console.log('BEFORE LOAD STICKERS: ', stickers);
 
   return {
     props: {
-      stickers,
+      stickers: stickers,
       homePage,
     },
+    revalidate: 3,
   };
 }
 
@@ -52,7 +49,7 @@ export default function Index({ stickers, homePage }) {
   const {
     headersection,
     // aboutsection,
-    statisticsection,
+    // statisticsection,
     ctasection,
     followsection,
   } = homePage[0];
@@ -76,7 +73,7 @@ export default function Index({ stickers, homePage }) {
 
       {/* Ecotowari Positive Impact */}
       <Container wrapperClass="d-flex align-items-center bg-2 ">
-        <Statistics stickers={stickers} data={statisticsection} />
+        <Statistics stickers={stickers} />
       </Container>
 
       {/* CTA */}

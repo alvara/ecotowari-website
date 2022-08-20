@@ -16,19 +16,20 @@ import {
   faCloud,
 } from '@fortawesome/free-solid-svg-icons';
 import useSWR from 'swr';
-import axios from 'axios';
+import { ISticker } from '../../services/type';
+import { getStickers } from '../../services/repository/getStickers';
 
-const fetcher = (url: string) => {
-  return axios.get(url).then((res) => {
-    return res.data;
-  });
-};
+interface IStatistics {
+  stickers: ISticker[];
+}
 
-export default function Statistics({ data }) {
+export default function Statistics({ stickers }) {
   const router = useRouter();
 
-  const { data: stickers } = useSWR('/api/stickers/', fetcher);
-  console.log('STICKERS AIRTABLE: ', stickers);
+  const { data } = useSWR('/api/stickers/', getStickers, {
+    fallbackData: stickers,
+    refreshInterval: 3000,
+  });
 
   return (
     <div id="portfolio" className="h-100 text-center justify-content-center">
@@ -76,9 +77,7 @@ export default function Statistics({ data }) {
               size="lg"
               className="circle-icon"
             />
-            <h3 className="text-primary">
-              {Math.round(totalStickers(stickers))}
-            </h3>
+            <h3 className="text-primary">{Math.round(totalStickers(data))}</h3>
             <h6>
               {router.locale === 'en'
                 ? 'Stickers in place'
@@ -90,7 +89,7 @@ export default function Statistics({ data }) {
           <div className="card">
             <FontAwesomeIcon icon={faTree} size="lg" className="circle-icon" />
             <h3 className="text-primary">
-              {Math.round(flyersReduced(stickers))} kg
+              {Math.round(flyersReduced(data))} kg
             </h3>
             <h6>
               {router.locale === 'en'
@@ -102,9 +101,7 @@ export default function Statistics({ data }) {
         <div className="col-md-4">
           <div className="card text-primary">
             <FontAwesomeIcon icon={faWater} size="lg" className="circle-icon" />
-            <h3 className="text-primary">
-              {Math.round(waterSaved(stickers))} L
-            </h3>
+            <h3 className="text-primary">{Math.round(waterSaved(data))} L</h3>
             <h6>
               {router.locale === 'en' ? 'Water saved' : 'リットルの水を節約'}
             </h6>
@@ -118,7 +115,7 @@ export default function Statistics({ data }) {
               className="circle-icon"
             />
             <h3 className="text-primary">
-              {Math.round(electricitySaved(stickers))} kWh
+              {Math.round(electricitySaved(data))} kWh
             </h3>
             <h6>
               {router.locale === 'en' ? 'Electricity saved' : '省エネルギー'}
@@ -129,7 +126,7 @@ export default function Statistics({ data }) {
           <div className="card">
             <FontAwesomeIcon icon={faCloud} size="lg" className="circle-icon" />
             <h3 className="text-primary">
-              {Math.round(co2Saved(stickers))} kg-CO2e
+              {Math.round(co2Saved(data))} kg-CO2e
             </h3>
             <h6>{router.locale === 'en' ? 'CO₂ saved' : '削減されたCO₂'}</h6>
           </div>
