@@ -19,7 +19,6 @@
     "lerna": "^4.0.0",
     "prettier": "^2.7.1"
   },
-  "dependencies": {},
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint",
     "*.{ts,tsx}": "bash -c 'npm run lint:types'",

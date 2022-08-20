@@ -18,6 +18,7 @@ import {
 import useSWR from 'swr';
 import { ISticker } from '../../services/type';
 import axios from 'axios';
+import { useCountUp } from 'react-countup';
 
 interface IStatistics {
   stickers: ISticker[];
@@ -35,6 +36,42 @@ export default function Statistics({ stickers }: IStatistics) {
       fallbackData: stickers,
     }
   );
+
+  //  configure countups
+  useCountUp({
+    ref: 'totalStickers',
+    end: Math.round(totalStickers(data)),
+    enableScrollSpy: true,
+    scrollSpyDelay: 150,
+  });
+
+  useCountUp({
+    ref: 'flyersReduced',
+    end: Math.round(flyersReduced(data)),
+    enableScrollSpy: true,
+    scrollSpyDelay: 150,
+  });
+
+  useCountUp({
+    ref: 'waterSaved',
+    end: Math.round(waterSaved(data)),
+    enableScrollSpy: true,
+    scrollSpyDelay: 150,
+  });
+
+  useCountUp({
+    ref: 'electricitySaved',
+    end: Math.round(electricitySaved(data)),
+    enableScrollSpy: true,
+    scrollSpyDelay: 150,
+  });
+
+  useCountUp({
+    ref: 'c02Saved',
+    end: Math.round(co2Saved(data)),
+    enableScrollSpy: true,
+    scrollSpyDelay: 150,
+  });
 
   return (
     <div id="portfolio" className="h-100 text-center justify-content-center">
@@ -82,7 +119,10 @@ export default function Statistics({ stickers }: IStatistics) {
               size="lg"
               className="circle-icon"
             />
-            <h3 className="text-primary">{Math.round(totalStickers(data))}</h3>
+            <h3 className="text-primary">
+              <span id="totalStickers" />
+            </h3>
+
             <h6>
               {router.locale === 'en'
                 ? 'Stickers in place'
@@ -94,7 +134,7 @@ export default function Statistics({ stickers }: IStatistics) {
           <div className="card">
             <FontAwesomeIcon icon={faTree} size="lg" className="circle-icon" />
             <h3 className="text-primary">
-              {Math.round(flyersReduced(data))} kg
+              <span id="flyersReduced" /> kg
             </h3>
             <h6>
               {router.locale === 'en'
@@ -106,7 +146,9 @@ export default function Statistics({ stickers }: IStatistics) {
         <div className="col-md-4">
           <div className="card text-primary">
             <FontAwesomeIcon icon={faWater} size="lg" className="circle-icon" />
-            <h3 className="text-primary">{Math.round(waterSaved(data))} L</h3>
+            <h3 className="text-primary">
+              <span id="waterSaved" />L
+            </h3>
             <h6>
               {router.locale === 'en' ? 'Water saved' : 'リットルの水を節約'}
             </h6>
@@ -120,7 +162,7 @@ export default function Statistics({ stickers }: IStatistics) {
               className="circle-icon"
             />
             <h3 className="text-primary">
-              {Math.round(electricitySaved(data))} kWh
+              <span id="electricitySaved" /> kWh
             </h3>
             <h6>
               {router.locale === 'en' ? 'Electricity saved' : '省エネルギー'}
@@ -131,7 +173,7 @@ export default function Statistics({ stickers }: IStatistics) {
           <div className="card">
             <FontAwesomeIcon icon={faCloud} size="lg" className="circle-icon" />
             <h3 className="text-primary">
-              {Math.round(co2Saved(data))} kg-CO2e
+              <span id="c02Saved" /> kg-CO2e
             </h3>
             <h6>{router.locale === 'en' ? 'CO₂ saved' : '削減されたCO₂'}</h6>
           </div>
