@@ -6,20 +6,21 @@ h5,
 h6,
 .preTitle,
 .subTitle {
-  font-family: 'Noto Sans JP', Serif;
+  font-family: 'Nunito', Serif;
 }
 
 body,
 p,
 pre {
-  font-family: 'BIZ UDPGothic', Sans-Serif;
+  font-family: 'Nunito', Sans-Serif;
 }
 
 h1 {
   margin-bottom: 32px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: capitalize;
   white-space: pre-wrap;
+  font-size: 2em;
 }
 
 h2 {
@@ -35,7 +36,7 @@ h3 {
 }
 
 h6 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 pre {
