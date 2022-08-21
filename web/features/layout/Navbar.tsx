@@ -11,19 +11,23 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-md navbar-light">
       <div className="container">
-        <Link href="/">
-          <a className="navbar-brand d-flex justify-content-center">
-            <Image
-              src={'/ecotowari-logo.svg'}
-              width="120"
-              height="40"
-              objectFit={'scale-down'}
-              alt="Ecotowari logo"
-              quality={10}
-              priority={true}
-            />
-          </a>
-        </Link>
+        <a
+          className="navbar-brand d-flex justify-content-center"
+          onClick={async () => {
+            await router.push('/');
+            setIsMenuOpen(false);
+          }}
+        >
+          <Image
+            src={'/ecotowari-logo.svg'}
+            width="120"
+            height="40"
+            objectFit={'scale-down'}
+            alt="Ecotowari logo"
+            quality={10}
+            priority={true}
+          />
+        </a>
         <button
           className="navbar-toggler"
           type="button"
