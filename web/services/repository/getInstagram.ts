@@ -1,5 +1,5 @@
 import Airtable from 'airtable';
-import { IInstagram, ISticker } from '../type';
+import { IInstagram } from '../type';
 
 export const getInstagram = async () => {
   const base = new Airtable({

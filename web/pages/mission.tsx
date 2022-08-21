@@ -1,7 +1,6 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import MainLayout from '../features/layout/mainLayout';
 import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
@@ -160,10 +159,5 @@ function Mission({ homePage }) {
     </>
   );
 }
-
-// Get the main template for standard pages
-Mission.getLayout = function getLayout(page: ReactElement) {
-  return <MainLayout>{page}</MainLayout>;
-};
 
 export default Mission;
