@@ -13,12 +13,12 @@ const Mission = () => {
   return (
     <>
       <Container wrapperClass="header-wrapper">
-        <HeroHeader title={'The Problem'} />
+        <HeroHeader title={'The Environment is in trouble'} />
       </Container>
       <Container
         wrapperClass="d-flex align-items-center  bg-2"
         pretitle="The Environment Is In Trouble"
-        title="The Problem"
+        title="How so?"
       >
         <p>
           Surveys have shown that most flyers are thrown away without being

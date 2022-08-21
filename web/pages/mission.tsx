@@ -5,7 +5,7 @@ import MainLayout from '../features/layout/mainLayout';
 import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
-import Supabase from '../utils/supabase';
+// import Supabase from '../utils/supabase';
 import client from '../client';
 import groq from 'groq';
 import FollowUs from '../features/sections/FollowUs';
@@ -15,16 +15,9 @@ export async function getStaticProps() {
   const homePage = await client.fetch(groq`
       *[_type == "home-page"]{'aboutImage': aboutsection.image.asset->url, ...} | order(publishedAt desc)
     `);
-  const { data: stickers, error } = await Supabase.from('stickers').select(
-    'qty, started_at'
-  );
-  if (error) {
-    throw new Error(error.message);
-  }
 
   return {
     props: {
-      stickers,
       homePage,
     },
   };
@@ -46,11 +39,7 @@ function Mission({ homePage }) {
       </Container>
 
       {/* About Ecotowari */}
-      <Container
-        wrapperClass="d-flex "
-        pretitle="About ecotowari"
-        title="Our Mission"
-      >
+      <Container wrapperClass="d-flex " title="Our mission">
         <p>
           While papermaking and printing companies have made efforts over the
           years, paper manufacturing still requires large quantities of water,
@@ -76,8 +65,7 @@ function Mission({ homePage }) {
       {/* Our Story */}
       <Container
         wrapperClass="d-flex align-items-center bg-2"
-        pretitle="Our Story"
-        title="How We Started"
+        title="How we started"
       >
         <p>
           The initiative was launched in January 2022 in a sharehouse in
@@ -108,8 +96,7 @@ function Mission({ homePage }) {
       {/* How We Are Different */}
       <Container
         wrapperClass="d-flex align-items-center"
-        pretitle="How We Are Different"
-        title="What Makes ecotowari Unique?"
+        title="What makes ecotowari unique?"
       >
         <p>
           We didn&apos;t invent the “チラシお断り” (chirashi okotowari – no to
