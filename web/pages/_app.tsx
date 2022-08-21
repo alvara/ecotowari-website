@@ -18,10 +18,10 @@ type AppPropsWithLayout = AppProps & {
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  useEffect(() => {
-    // import bootstrap js for menu collapse
-    import('bootstrap/dist/js/bootstrap');
-  }, []);
+  // useEffect(() => {
+  //   // import bootstrap js for menu collapse
+  //   import('bootstrap/dist/js/bootstrap');
+  // }, []);
 
   return (
     <>
