@@ -9,3 +9,11 @@ export interface ISticker {
     name: string;
   };
 }
+
+export interface IInstagram {
+  id: number;
+  image: string;
+  notes?: string;
+  publishDate: string;
+  status?: string;
+}
