@@ -1,1 +1,0 @@
-# ecotowari-studio
