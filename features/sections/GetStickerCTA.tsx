@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 GetStickerCTA.propTypes = {
   data: PropTypes.object,
@@ -33,7 +32,8 @@ export default function GetStickerCTA({ data }) {
         </div>
         <pre>{data.content[router.locale]}</pre>
         <div className="text-center mailingList">
-          <MailchimpSubscribe url={url} />
+          {/*  TODO: implement airtable mailing list  */}
+          {/* <MailchimpSubscribe url={url} /> */}
         </div>
       </div>
       <div className="bg-overlay"></div>
