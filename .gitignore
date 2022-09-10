@@ -41,6 +41,3 @@ jspm_packages
 out
 
 .env.local
-
-node_modules
-.next
