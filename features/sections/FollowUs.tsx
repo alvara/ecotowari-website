@@ -54,7 +54,7 @@ export default function FollowUs({ instagram }: IFollowUs) {
                   alt="test"
                   className=""
                   quality={30}
-                  style={{ marginBottom: '1rem' }}
+                  style={{ marginBottom: '2rem' }}
                 />
               </a>
             </Link>
