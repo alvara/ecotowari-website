@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -11,7 +10,6 @@ interface IFollowUs {
   instagram: IInstagram[];
 }
 export default function FollowUs({ instagram }: IFollowUs) {
-  console.log('INSTAGRAM: ', instagram);
   const router = useRouter();
   return (
     <>
