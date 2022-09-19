@@ -2,12 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
-import FAQ from '../features/sections/FAQ';
 
 // view all blog posts
 const Mission = () => {
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <Container wrapperClass="header-wrapper">
