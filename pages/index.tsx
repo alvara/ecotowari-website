@@ -12,10 +12,7 @@ import { getInstagram } from '../services/repository/getInstagram';
 
 export async function getStaticProps() {
   const stickers = await getStickers();
-  console.log('BEFORE LOAD STICKERS: ', stickers);
-
   const instagram = await getInstagram();
-  console.log('BEFORE LOAD INSTAGRAM: ', instagram);
 
   return {
     props: {
