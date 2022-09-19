@@ -20,9 +20,9 @@ export default function Navbar() {
         >
           <Image
             src={'/ecotowari-logo.svg'}
-            width="120"
+            width="150"
             height="40"
-            objectFit={'scale-down'}
+            objectFit={'contain'}
             alt="Ecotowari logo"
             quality={10}
             priority={true}
