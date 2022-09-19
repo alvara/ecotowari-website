@@ -41,10 +41,9 @@ export default function Statistics({ stickers }: IStatistics) {
     <div id="portfolio" className="h-100 text-center justify-content-center">
       <div className="row">
         <div className="offset-md-2 col-md-8">
-          <span className="preTitle">How We Help</span>
           <h2>
             {router.locale === 'en'
-              ? 'ecotowari In Numbers'
+              ? 'ecotowari In numbers'
               : '数字で見るecotowari'}
           </h2>
           <pre>

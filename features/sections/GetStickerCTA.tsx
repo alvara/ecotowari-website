@@ -16,9 +16,7 @@ export default function GetStickerCTA({ data }) {
   return (
     <div id="sticker" className="row">
       <h2 className="text-center pb-0 mb-0">
-        {router.locale === 'en'
-          ? 'How to get a Sticker'
-          : 'ステッカーの入手方法'}
+        {router.locale === 'en' ? 'You can help' : 'ステッカーの入手方法'}
       </h2>
       <div className="offset-md-2 col-md-8">
         <div className="my-5">

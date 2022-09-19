@@ -1,27 +1,44 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {useRouter} from 'next/router'
+import React from 'react';
+import { useRouter } from 'next/router';
 
-ContactUs.propTypes = {
-  data: PropTypes.object,
-}
-
-export default function ContactUs({data}) {
-  const router = useRouter()
+export default function ContactUs() {
+  const router = useRouter();
 
   return (
     <div className="row">
       <div className="col-md-5">
-        <h2>{data.title[router.locale]}</h2>
-        <pre>{data.content[router.locale]}</pre>
+        <h2 className="text-center">
+          {router.locale === 'en'
+            ? 'We are here for you!'
+            : 'We are here for you!'}
+        </h2>
+        <pre>
+          {router.locale === 'en'
+            ? `If you have any questions or comments and you'd like to get in touch with the ecotowari team, please fill in the following form. 
+
+We will do our best to get back to within 3 business days. Thank you!`
+            : `If you have any questions or comments and you'd like to get in touch with the ecotowari team, please fill in the following form. 
+
+We will do our best to get back to within 3 business days. Thank you!`}
+        </pre>
       </div>
       <div className="col-md-7">
-        <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
           {/* You still need to add the hidden input with the form name to your JSX form */}
           <input type="hidden" name="form-name" value="contact" />
 
           <label>What is your Email?</label>
-          <input type="email" name="email" className={'w-100'} placeholder="Email" />
+          <input
+            type="email"
+            name="email"
+            className={'w-100'}
+            placeholder="Email"
+          />
 
           <label>Please fill in the details </label>
           <textarea name="content" className={'w-100'} placeholder="Message" />
@@ -33,5 +50,5 @@ export default function ContactUs({data}) {
         </form>
       </div>
     </div>
-  )
+  );
 }

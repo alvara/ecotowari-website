@@ -11,14 +11,9 @@ const Mission = () => {
   return (
     <>
       <Container wrapperClass="header-wrapper">
-        <HeroHeader title={'About Us'} />
+        <HeroHeader title={'About us'} />
       </Container>
-      <Container
-        wrapperClass="d-flex align-items-center"
-        pretitle="About Us"
-        title="Our Values"
-      >
-        <p>[Information about our Values, Credo, and culture at ecotowari]</p>
+      <Container wrapperClass="d-flex align-items-center" title="Our values">
         <p>
           Climate action is often seen as too big a task, something only
           governments or large corporations can undertake. At ecotowari, we
@@ -44,27 +39,21 @@ const Mission = () => {
       <Container
         // TODO: refactor so bg-overlay is option bg-1, bg-2, and bg-3 within global container component
         wrapperClass="header-wrapper d-flex align-items-center bg-3 text-center"
-        pretitle="SDGs"
-        title="Our Sustainable Development Goals"
+        title="SDGs"
       >
         [SDG Information will go here as cards]
         <div className="bg-overlay"></div>
       </Container>
       <Container
         wrapperClass="d-flex align-items-center bg-2 text-center"
-        pretitle="Say Hello"
-        title="Meet the Team"
+        title="Meet the team"
       >
         <p>
           [Avatar circle with profiles of each person with summary of each team
           member]
         </p>
       </Container>
-      <Container
-        wrapperClass="d-flex align-items-center"
-        pretitle="Our Mascot"
-        title="Meet Inigochi"
-      >
+      <Container wrapperClass="d-flex align-items-center" title="Meet inigochi">
         <p>
           Inigo can be written as 1 2 5 in Japanese. Inigo’s parents picked this
           name in relation with the target 12.5 of the United Nations’
@@ -85,8 +74,7 @@ const Mission = () => {
 
       <Container
         wrapperClass="d-flex align-items-center bg-2 text-center"
-        pretitle="Special Thanks"
-        title="To Our Dear Supporters"
+        title="to our dear supporters"
       >
         <p>
           Our heartfelt gratitude to Ibaraki Kiyotaka from Studio Lucky for
@@ -115,14 +103,6 @@ const Mission = () => {
           on flyer distribution and for sporting the ecotowari sticker on their
           mailbox before it was cool!{' '}
         </p>
-      </Container>
-
-      <Container
-        wrapperClass="d-flex align-items-center text-center"
-        pretitle="FAQ"
-        title="Common Questions"
-      >
-        <FAQ />
       </Container>
     </>
   );

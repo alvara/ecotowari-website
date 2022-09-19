@@ -31,13 +31,12 @@ const Contact = ({ contactPage }) => {
         className="d-flex flex-column justify-content-center"
       >
         <HeroHeader
-          title={headersection.title[router.locale]}
-          subtitle={'Contact the ecotowari team'}
+          title={router.locale === 'en' ? 'Contact' : '問い合わせ'}
           textAlign="center"
         />
       </Container>
       <Container wrapperClass="d-flex align-items-center ">
-        <ContactUs data={formsection} />
+        <ContactUs />
       </Container>
     </>
   );

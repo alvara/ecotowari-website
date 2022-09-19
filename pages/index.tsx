@@ -43,7 +43,7 @@ export default function Index({ stickers, homePage, instagram }) {
         <IndexHeader
           title={
             router.locale === 'en'
-              ? 'One Sticker To Reduce Waste'
+              ? 'One sticker to reduce waste'
               : '1枚のステッカーでゼロウェイストの社会へ'
           }
           subtitle={
