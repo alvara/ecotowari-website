@@ -43,21 +43,22 @@ export default function FollowUs({ instagram }: IFollowUs) {
       <div className="row row-cols-2 row-cols-md-4">
         {instagram.map((item) => (
           <div key={item.id} className="col">
-            <Link href={item.url} passHref={true}>
-              <a>
-                <Image
-                  src={item.image[0].thumbnails.large.url}
-                  width="250"
-                  height="250"
-                  layout="responsive"
-                  objectFit="scale-down"
-                  alt="test"
-                  className=""
-                  quality={30}
-                  style={{ marginBottom: '2rem' }}
-                />
-              </a>
-            </Link>
+            <div style={{ marginBottom: '2rem' }}>
+              <Link href={item.url} passHref={true}>
+                <a>
+                  <Image
+                    src={item.image[0].thumbnails.large.url}
+                    width="250"
+                    height="250"
+                    layout="responsive"
+                    objectFit="scale-down"
+                    alt="test"
+                    className=""
+                    quality={30}
+                  />
+                </a>
+              </Link>
+            </div>
           </div>
         ))}
       </div>
