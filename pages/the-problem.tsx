@@ -5,6 +5,7 @@ import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
 import FAQ from '../features/sections/FAQ';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
+import Image from 'next/image';
 
 // view all blog posts
 const Mission = () => {
@@ -52,7 +53,25 @@ const Mission = () => {
             <li>Recycling or incinerating the flyers which requires energy</li>
           </ul>
         </p>
-        [Diagram will go here]
+        <div style={{ position: 'relative' }}>
+          {router.locale === 'en' ? (
+            <Image
+              src="/lifecycle_en.png"
+              layout="responsive"
+              width={1000}
+              height={900}
+              objectFit="contain"
+            />
+          ) : (
+            <Image
+              src="/lifecycle_jp.png"
+              layout="responsive"
+              width={1000}
+              height={900}
+              objectFit="contain"
+            />
+          )}
+        </div>
       </Container>
 
       <Container
