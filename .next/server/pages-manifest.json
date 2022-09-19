@@ -3,7 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/mission": "pages/mission.js",
-  "/contact": "pages/contact.js",
-  "/api/stickers": "pages/api/stickers.js"
+  "/api/stickers": "pages/api/stickers.js",
+  "/the-problem": "pages/the-problem.js"
 }

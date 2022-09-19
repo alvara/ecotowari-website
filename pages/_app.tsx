@@ -8,6 +8,7 @@ import Head from 'next/head';
 import Navbar from '../features/layout/Navbar';
 import Container from '../components/Container';
 import Footer from '../features/layout/Footer';
+import { motion } from 'framer-motion';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -19,7 +20,11 @@ type AppPropsWithLayout = AppProps & {
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.35 }}
+    >
       <Head>
         <title>Home | ecotowari</title>
       </Head>
@@ -30,6 +35,6 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <Container wrapperClass="bg-dark text-white pt-3 pb-0">
         <Footer />
       </Container>
-    </>
+    </motion.div>
   );
 }
