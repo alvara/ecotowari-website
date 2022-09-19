@@ -5,7 +5,7 @@ import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
 import ContactUs from '../features/sections/ContactUs';
 
-const Contact = ({ contactPage }) => {
+const Contact = () => {
   const router = useRouter();
 
   return (
