@@ -40,7 +40,7 @@ export default function FollowUs({ instagram }: IFollowUs) {
           </Link>
         </div>
       </div>
-      <div className="row row-cols-4">
+      <div className="row row-cols-2 row-cols-md-4">
         {instagram.map((item) => (
           <div key={item.id} className="col">
             <Link href={item.url} passHref={true}>
