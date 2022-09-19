@@ -30,7 +30,7 @@ We will do our best to get back to within 3 business days. Thank you!`}
           data-netlify-honeypot="bot-field"
         >
           {/* You still need to add the hidden input with the form name to your JSX form */}
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact-form" value="contact" />
 
           <label>What is your Email?</label>
           <input
@@ -46,7 +46,6 @@ We will do our best to get back to within 3 business days. Thank you!`}
           <button type="submit" className="btn d-block">
             Send <span className="btn-carrot">›</span>
           </button>
-          {/* {data.buttontext[router.locale]} */}
         </form>
       </div>
     </div>
