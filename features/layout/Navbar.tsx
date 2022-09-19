@@ -3,7 +3,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import cookieCutter from 'cookie-cutter';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const router = useRouter();
@@ -46,9 +45,7 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <motion.div
-          animate={isMenuOpen ? 'open' : 'closed'}
-          variants={variants}
+        <div
           className={`${isMenuOpen ? '' : 'collapse'} navbar-collapse`}
           id="collapseNavbar"
         >
@@ -145,7 +142,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-        </motion.div>
+        </div>
       </div>
     </nav>
   );
