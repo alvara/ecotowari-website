@@ -36,15 +36,15 @@ const Mission = () => {
         <p>Let&apos;s all do what we can!</p>
       </Container>
       {/* SDG */}
-      <Container
+      {/* <Container
         // TODO: refactor so bg-overlay is option bg-1, bg-2, and bg-3 within global container component
         wrapperClass="header-wrapper d-flex align-items-center bg-3 text-center"
         title="SDGs"
       >
         [SDG Information will go here as cards]
         <div className="bg-overlay"></div>
-      </Container>
-      <Container
+      </Container> */}
+      {/* <Container
         wrapperClass="d-flex align-items-center bg-2 text-center"
         title="Meet the team"
       >
@@ -52,7 +52,7 @@ const Mission = () => {
           [Avatar circle with profiles of each person with summary of each team
           member]
         </p>
-      </Container>
+      </Container> */}
       <Container wrapperClass="d-flex align-items-center" title="Meet inigochi">
         <p>
           Inigo can be written as 1 2 5 in Japanese. Inigo’s parents picked this
