@@ -71,7 +71,7 @@ const Mission = () => {
       </Container>
 
       <Container
-        wrapperClass="d-flex align-items-center bg-2 text-center"
+        wrapperClass="d-flex align-items-center bg-2"
         title="to our dear supporters"
       >
         <p>
