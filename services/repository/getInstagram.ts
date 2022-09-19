@@ -28,6 +28,6 @@ export const getInstagram = async () => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  console.log(data);
+  // console.log(data);
   return data.slice(0, 8);
 };

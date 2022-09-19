@@ -3,10 +3,16 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import cookieCutter from 'cookie-cutter';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const variants = {
+    closed: { opacity: 0, y: '-25%' },
+    open: { opacity: 1, y: 0 },
+  };
 
   return (
     <nav className="navbar navbar-expand-md navbar-light">
@@ -40,7 +46,9 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
+        <motion.div
+          animate={isMenuOpen ? 'open' : 'closed'}
+          variants={variants}
           className={`${isMenuOpen ? '' : 'collapse'} navbar-collapse`}
           id="collapseNavbar"
         >
@@ -137,7 +145,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </nav>
   );

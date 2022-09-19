@@ -29,7 +29,7 @@ export function StatisticCard({
   const countUpRef = useRef(id);
 
   return (
-    <div className="card">
+    <div className="card text-center">
       <FontAwesomeIcon
         icon={faIcon}
         size="lg"

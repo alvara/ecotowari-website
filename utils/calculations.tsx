@@ -8,7 +8,6 @@ export function totalDaysDeployed(stickers: ISticker[] = []): number {
 
   // loop through stickers and add up the days
   stickers.forEach((sticker) => {
-    console.log('COUNTING DAYS:', now.diff(sticker.started, 'day'));
     totalDays += now.diff(sticker.started, 'day') * sticker.qty;
   });
 

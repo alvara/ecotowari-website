@@ -20,6 +20,6 @@ export const getStickers = async () => {
     });
   });
 
-  console.log(data);
+  // console.log(data);
   return data;
 };
