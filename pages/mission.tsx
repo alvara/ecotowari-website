@@ -1,13 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
 import FollowUs from '../features/sections/FollowUs';
 import { getInstagram } from '../services/repository/getInstagram';
+import { getStickers } from '../services/repository/getStickers';
 
 export async function getStaticProps() {
+  const stickers = await getStickers();
+  console.log('BEFORE LOAD STICKERS: ', stickers);
+
   const instagram = await getInstagram();
   console.log('BEFORE LOAD INSTAGRAM: ', instagram);
 
@@ -20,14 +23,8 @@ export async function getStaticProps() {
   };
 }
 
-Mission.propTypes = {
-  homePage: PropTypes.arrayOf(PropTypes.object),
-};
-
-function Mission({ homePage }) {
-  const { ctasection, followsection } = homePage[0];
+function Mission({ stickers, instagram }) {
   const router = useRouter();
-  console.log(router);
 
   return (
     <>
@@ -138,7 +135,7 @@ function Mission({ homePage }) {
 
       {/* CTA */}
       <Container wrapperClass="header-wrapper d-flex align-items-center bg-3">
-        <GetStickerCTA data={ctasection} />
+        <GetStickerCTA />
       </Container>
 
       {/* Socials */}
