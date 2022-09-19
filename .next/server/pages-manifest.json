@@ -2,8 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/mission": "pages/mission.js",
   "/": "pages/index.js",
   "/api/stickers": "pages/api/stickers.js",
-  "/mission": "pages/mission.js",
-  "/the-problem": "pages/the-problem.js"
+  "/about-us": "pages/about-us.js",
+  "/contact": "pages/contact.js"
 }

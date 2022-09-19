@@ -45,7 +45,7 @@ export default function FollowUs({ instagram }: IFollowUs) {
           <div key={item.id} className="col">
             <div style={{ marginBottom: '2rem' }}>
               <Link href={item.url} passHref={true}>
-                <a>
+                <a target="_blank">
                   <Image
                     src={item.image[0].thumbnails.large.url}
                     width="250"
