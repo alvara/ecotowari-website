@@ -4,21 +4,19 @@ import { useRouter } from 'next/router';
 import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
 import GetStickerCTA from '../features/sections/GetStickerCTA';
-// import Supabase from '../utils/supabase';
-import client from '../client';
-import groq from 'groq';
 import FollowUs from '../features/sections/FollowUs';
+import { getInstagram } from '../services/repository/getInstagram';
 
 export async function getStaticProps() {
-  // get i18n text from sanity
-  const homePage = await client.fetch(groq`
-      *[_type == "home-page"]{'aboutImage': aboutsection.image.asset->url, ...} | order(publishedAt desc)
-    `);
+  const instagram = await getInstagram();
+  console.log('BEFORE LOAD INSTAGRAM: ', instagram);
 
   return {
     props: {
-      homePage,
+      stickers: stickers,
+      instagram: instagram,
     },
+    revalidate: 3,
   };
 }
 
@@ -145,7 +143,7 @@ function Mission({ homePage }) {
 
       {/* Socials */}
       <Container wrapperClass="d-flex align-items-center bg-2">
-        <FollowUs data={followsection} />
+        <FollowUs instagram={instagram} />
       </Container>
 
       {/* FAQ */}

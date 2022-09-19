@@ -27,6 +27,17 @@ h2 {
   font-weight: 700;
   margin-bottom: 1.2em;
   font-size: 2em;
+  position: relative;
+
+  &:before {
+    border-bottom: 5px solid #37b44b;
+    bottom: -0.4em;
+    content: '';
+    height: 1em;
+    left: 40%;
+    position: absolute;
+    width: 20%;
+  }
 }
 
 h3 {

@@ -10,7 +10,7 @@ module.exports = {
     defaultLocale: 'ja',
   },
   images: {
-    domains: ['via.placeholder.com', 'cdn.sanity.io', 'scontent-nrt1-1.cdninstagram.com'],
+    domains: ['via.placeholder.com', 'cdn.sanity.io', 'dl.airtable.com'],
   },
   trailingSlash: true,
-}
+};

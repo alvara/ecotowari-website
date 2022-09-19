@@ -18,7 +18,7 @@ import {
 import useSWR from 'swr';
 import { ISticker } from '../../services/type';
 import axios from 'axios';
-import { useCountUp } from 'react-countup';
+import { StatisticCard } from '../../components/card/StatisticCard';
 
 interface IStatistics {
   stickers: ISticker[];
@@ -36,42 +36,6 @@ export default function Statistics({ stickers }: IStatistics) {
       fallbackData: stickers,
     }
   );
-
-  //  configure countups
-  useCountUp({
-    ref: 'totalStickers',
-    end: Math.round(totalStickers(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'flyersReduced',
-    end: Math.round(flyersReduced(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'waterSaved',
-    end: Math.round(waterSaved(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'electricitySaved',
-    end: Math.round(electricitySaved(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'c02Saved',
-    end: Math.round(co2Saved(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
 
   return (
     <div id="portfolio" className="h-100 text-center justify-content-center">
