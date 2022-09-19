@@ -18,7 +18,7 @@ import {
 import useSWR from 'swr';
 import { ISticker } from '../../services/type';
 import axios from 'axios';
-import { useCountUp } from 'react-countup';
+import { StatisticCard } from '../../components/card/StatisticCard';
 
 interface IStatistics {
   stickers: ISticker[];
@@ -37,50 +37,13 @@ export default function Statistics({ stickers }: IStatistics) {
     }
   );
 
-  //  configure countups
-  useCountUp({
-    ref: 'totalStickers',
-    end: Math.round(totalStickers(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'flyersReduced',
-    end: Math.round(flyersReduced(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'waterSaved',
-    end: Math.round(waterSaved(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'electricitySaved',
-    end: Math.round(electricitySaved(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
-  useCountUp({
-    ref: 'c02Saved',
-    end: Math.round(co2Saved(data)),
-    enableScrollSpy: true,
-    scrollSpyDelay: 150,
-  });
-
   return (
     <div id="portfolio" className="h-100 text-center justify-content-center">
       <div className="row">
         <div className="offset-md-2 col-md-8">
-          <span className="preTitle">How We Help</span>
           <h2>
             {router.locale === 'en'
-              ? 'ecotowari In Numbers'
+              ? 'ecotowari In numbers'
               : '数字で見るecotowari'}
           </h2>
           <pre>
@@ -113,70 +76,58 @@ export default function Statistics({ stickers }: IStatistics) {
       </div>
       <div className="row justify-content-center align-items-center pt-4">
         <div className="col-md-4">
-          <div className="card text-primary">
-            <FontAwesomeIcon
-              icon={faHouseUser}
-              size="lg"
-              className="circle-icon"
-            />
-            <h3 className="text-primary">
-              <span id="totalStickers" />
-            </h3>
-
-            <h6>
-              {router.locale === 'en'
-                ? 'Stickers in place'
-                : 'ステッカー使用数'}
-            </h6>
-          </div>
+          <StatisticCard
+            id="totalStickers"
+            faIcon={faHouseUser}
+            statistic={totalStickers(data)}
+            description={
+              router.locale === 'en' ? 'Stickers in place' : 'ステッカー使用数'
+            }
+          />
         </div>
         <div className="col-md-4">
-          <div className="card">
-            <FontAwesomeIcon icon={faTree} size="lg" className="circle-icon" />
-            <h3 className="text-primary">
-              <span id="flyersReduced" /> kg
-            </h3>
-            <h6>
-              {router.locale === 'en'
+          <StatisticCard
+            id="flyersReduced"
+            faIcon={faTree}
+            statistic={flyersReduced(data)}
+            unit="kg"
+            description={
+              router.locale === 'en'
                 ? 'Paper waste reduced'
-                : '削減されたチラシ'}
-            </h6>
-          </div>
+                : '削減されたチラシ'
+            }
+          />
         </div>
         <div className="col-md-4">
-          <div className="card text-primary">
-            <FontAwesomeIcon icon={faWater} size="lg" className="circle-icon" />
-            <h3 className="text-primary">
-              <span id="waterSaved" />L
-            </h3>
-            <h6>
-              {router.locale === 'en' ? 'Water saved' : 'リットルの水を節約'}
-            </h6>
-          </div>
+          <StatisticCard
+            id="waterSaved"
+            faIcon={faWater}
+            statistic={waterSaved(data)}
+            unit="L"
+            description={
+              router.locale === 'en' ? 'Water saved' : 'リットルの水を節約'
+            }
+          />
         </div>
         <div className="col-md-4">
-          <div className="card">
-            <FontAwesomeIcon
-              icon={faLightbulb}
-              size="lg"
-              className="circle-icon"
-            />
-            <h3 className="text-primary">
-              <span id="electricitySaved" /> kWh
-            </h3>
-            <h6>
-              {router.locale === 'en' ? 'Electricity saved' : '省エネルギー'}
-            </h6>
-          </div>
+          <StatisticCard
+            id="electricitySaved"
+            faIcon={faLightbulb}
+            statistic={electricitySaved(data)}
+            unit="KWh"
+            description={
+              router.locale === 'en' ? 'Electricity saved' : '省エネルギー'
+            }
+          />
         </div>
         <div className="col-md-4">
-          <div className="card">
-            <FontAwesomeIcon icon={faCloud} size="lg" className="circle-icon" />
-            <h3 className="text-primary">
-              <span id="c02Saved" /> kg-CO2e
-            </h3>
-            <h6>{router.locale === 'en' ? 'CO₂ saved' : '削減されたCO₂'}</h6>
-          </div>
+          <StatisticCard
+            id="c02Saved"
+            faIcon={faCloud}
+            statistic={co2Saved(data)}
+            unit="kg-CO2e"
+            description={router.locale === 'en' ? 'CO₂ saved' : '削減されたCO₂'}
+          />
         </div>
       </div>
     </div>

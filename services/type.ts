@@ -12,8 +12,36 @@ export interface ISticker {
 
 export interface IInstagram {
   id: number;
-  image: string;
+  image: IAirtableImage[];
   notes?: string;
   publishDate: string;
-  status?: string;
+  status?: string | null;
+  url: string;
+}
+
+export interface IAirtableImage {
+  id: string;
+  filename: string;
+  height: number;
+  size: number;
+  thumbnails: {
+    full: {
+      height: number;
+      url: string;
+      width: number;
+    };
+    large: {
+      height: number;
+      url: string;
+      width: number;
+    };
+    small: {
+      height: number;
+      url: string;
+      width: number;
+    };
+  };
+  type: string;
+  url: string;
+  width: number;
 }

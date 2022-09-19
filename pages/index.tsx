@@ -10,20 +10,19 @@ import GetStickerCTA from '../features/sections/GetStickerCTA';
 import FollowUs from '../features/sections/FollowUs';
 import SentenceSummary from '../features/sections/SentenceSummary';
 import { getStickers } from '../services/repository/getStickers';
+import { getInstagram } from '../services/repository/getInstagram';
 
 export async function getStaticProps() {
-  // query for home page content
-  const homePage = await client.fetch(groq`
-      *[_type == "home-page"]{'aboutImage': aboutsection.image.asset->url, ...} | order(publishedAt desc)
-    `);
-
   const stickers = await getStickers();
   console.log('BEFORE LOAD STICKERS: ', stickers);
+
+  const instagram = await getInstagram();
+  console.log('BEFORE LOAD INSTAGRAM: ', instagram);
 
   return {
     props: {
       stickers: stickers,
-      homePage,
+      instagram: instagram,
     },
     revalidate: 3,
   };
@@ -32,28 +31,30 @@ export async function getStaticProps() {
 Index.propTypes = {
   homePage: PropTypes.arrayOf(PropTypes.object),
   stickers: PropTypes.arrayOf(PropTypes.object),
+  instagram: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default function Index({ stickers, homePage }) {
+export default function Index({ stickers, homePage, instagram }) {
   const router = useRouter();
-
-  // deconstruct data for each section in the page
-  const {
-    headersection,
-    // aboutsection,
-    // statisticsection,
-    ctasection,
-    followsection,
-  } = homePage[0];
 
   return (
     <>
       <Container wrapperClass="header-wrapper index-wrapper">
         <IndexHeader
-          title={headersection.title[router.locale]}
-          subtitle={headersection.subtitle[router.locale]}
-          buttonPath={headersection.buttonpath}
-          buttonText={headersection.buttontext[router.locale]}
+          title={
+            router.locale === 'en'
+              ? 'One sticker to reduce waste'
+              : '1枚のステッカーでゼロウェイストの社会へ'
+          }
+          subtitle={
+            router.locale === 'en'
+              ? 'Free your mailbox from unsolicited flyers with this real-life spam filter!'
+              : '我々のゴールは、あなたのポストを望んでいないチラシから解放することです。'
+          }
+          buttonPath={'#sticker'}
+          buttonText={
+            router.locale === 'en' ? 'Get a sticker' : 'ステッカーをゲット'
+          }
           img={'/mailbox-split-green.png'}
         />
       </Container>
@@ -70,12 +71,12 @@ export default function Index({ stickers, homePage }) {
 
       {/* CTA */}
       <Container wrapperClass="header-wrapper d-flex align-items-center bg-3">
-        <GetStickerCTA data={ctasection} />
+        <GetStickerCTA />
       </Container>
 
       {/* Socials */}
       <Container wrapperClass="d-flex align-items-center bg-2">
-        <FollowUs data={followsection} />
+        <FollowUs instagram={instagram} />
       </Container>
 
       {/* <Container wrapperClass="d-flex align-items-center bg-2"><LatestNews posts={posts} /></Container> */}

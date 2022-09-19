@@ -1,61 +1,67 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Image from 'next/image'
-import {useRouter} from 'next/router'
-import Link from 'next/link'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { IInstagram } from '../../services/type';
 
-FollowUs.propTypes = {
-  data: PropTypes.object
+interface IFollowUs {
+  instagram: IInstagram[];
 }
-export default function FollowUs({igPosts,data}) {
-  const router = useRouter()
+export default function FollowUs({ instagram }: IFollowUs) {
+  console.log('INSTAGRAM: ', instagram);
+  const router = useRouter();
   return (
-    <div className="row">
-      <span className="text-center preTitle">#ecotowari</span>
-      <h2 className="text-center">{data.title[router.locale]}</h2>
-      <pre className="text-center">{data.content[router.locale]}</pre>
+    <>
+      <div className="row">
+        <h2 className="text-center">Follow us!</h2>
 
-      <div className="text-center">
-        <Link href={`${data.instagram}`}>
-          <a target="_window">
-            <FontAwesomeIcon icon={faInstagram} size="lg" className='social-icon'/>
-          </a>
-        </Link>
+        <div className="text-center mb-4">
+          <Link href="https://www.instagram.com/ecotowari/">
+            <a target="_window">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                size="lg"
+                className="social-icon"
+              />
+            </a>
+          </Link>
 
-        <Link href={`${data.facebook}`}>
-          <a target="_window">
-            <FontAwesomeIcon icon={faFacebook} size="lg" className='social-icon'/>
-          </a>
-        </Link>
-
-      </div>
-
-        <div className="row row-cols-4">
-          {/* TODO: implement instagram connection workaround */}
-          {igPosts && igPosts.map((post) => (
-            <div key={post.node.shortcode} className="col">
-              <Link href={`https://www.instagram.com/p/${post.node.shortcode}`} passHref={true}>
-                <a><Image 
-                      src={post.node.thumbnail_src} 
-                      width="250" 
-                      height="250" 
-                      layout="responsive" 
-                      objectFit='scale-down' 
-                      alt="test" 
-                      className=""
-                       quality={30}/></a>
-              </Link>
-            </div>
-          )
-              
-          )}
+          <Link href={`https://www.facebook.com/ecotowari`}>
+            <a target="_window">
+              <FontAwesomeIcon
+                icon={faFacebook}
+                size="lg"
+                className="social-icon"
+              />
+            </a>
+          </Link>
         </div>
       </div>
-  )
-}
-
-FollowUs.propTypes = {
-  igPosts: PropTypes.array
+      <div className="row row-cols-2 row-cols-md-4">
+        {instagram.map((item) => (
+          <div key={item.id} className="col">
+            <div style={{ marginBottom: '2rem' }}>
+              <Link href={item.url} passHref={true}>
+                <a>
+                  <Image
+                    src={item.image[0].thumbnails.large.url}
+                    width="250"
+                    height="250"
+                    layout="responsive"
+                    objectFit="scale-down"
+                    alt="test"
+                    className=""
+                    quality={30}
+                  />
+                </a>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
