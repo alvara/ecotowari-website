@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import client from '../client';
-import groq from 'groq';
 import Container from '../components/Container';
 import { useRouter } from 'next/router';
 import IndexHeader from '../components/header/IndexHeader';
@@ -29,12 +27,11 @@ export async function getStaticProps() {
 }
 
 Index.propTypes = {
-  homePage: PropTypes.arrayOf(PropTypes.object),
   stickers: PropTypes.arrayOf(PropTypes.object),
   instagram: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default function Index({ stickers, homePage, instagram }) {
+export default function Index({ stickers, instagram }) {
   const router = useRouter();
 
   return (
