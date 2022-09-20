@@ -1,17 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-GetStickerCTA.propTypes = {
-  data: PropTypes.object,
-};
-
-export default function GetStickerCTA({ data }) {
+export default function GetStickerCTA() {
   const router = useRouter();
-
-  const url =
-    'https://ecotowari.us14.list-manage.com/subscribe/post?u=fb888509b6f45d3e61ff06e47&amp;id=5ec65eaa39';
 
   return (
     <div id="sticker" className="row">
@@ -46,13 +38,13 @@ We will soon launch a crowdfunding campaign where you will be able to get your h
         </pre>
         <div className="text-center mailingList">
           <form
-            name="contact"
+            name="mailinglist"
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
             {/* You still need to add the hidden input with the form name to your JSX form */}
-            <input type="hidden" name="mailing-list" value="contact" />
+            <input type="hidden" name="mailing-list-form" value="mailinglist" />
 
             <div className="input-group">
               <input
