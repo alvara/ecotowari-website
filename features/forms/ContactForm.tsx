@@ -2,8 +2,9 @@ import axios from 'axios';
 import { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 
-export default function MailingListForm() {
+export default function ContactForm() {
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   // modal state
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -14,11 +15,12 @@ export default function MailingListForm() {
       try {
         const data = await axios({
           method: 'POST',
-          url: '/api/mailinglist/',
-          data: { email },
+          url: '/api/contact/',
+          data: { email, message },
         }).then((res) => {
           console.log(res.data);
           setEmail('');
+          setMessage('');
           openModal();
         });
       } catch (error) {
@@ -53,20 +55,26 @@ export default function MailingListForm() {
   return (
     <>
       <form name="mailinglist" onSubmit={(e) => handleSubmit(e)}>
-        <div className="input-group">
-          <input
-            type="email"
-            name="email"
-            className={'w-100'}
-            placeholder="example@email.com"
-            onChange={(e) => setEmail(e.currentTarget.value)}
-            value={email}
-          />
+        <label>What is your Email?</label>
+        <input
+          type="email"
+          name="email"
+          className={'w-100'}
+          placeholder="Email"
+          onChange={(e) => setEmail(e.currentTarget.value)}
+        />
 
-          <button type="submit" className="btn ">
-            Send
-          </button>
-        </div>
+        <label>Please fill in the details </label>
+        <textarea
+          name="message"
+          className={'w-100'}
+          placeholder="Message"
+          onChange={(e) => setMessage(e.currentTarget.value)}
+        />
+
+        <button type="submit" className="btn d-block">
+          Send <span className="btn-carrot">›</span>
+        </button>
       </form>
 
       <Modal
