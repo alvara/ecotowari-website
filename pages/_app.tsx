@@ -9,6 +9,7 @@ import Navbar from '../features/layout/Navbar';
 import Container from '../components/Container';
 import Footer from '../features/layout/Footer';
 import { motion } from 'framer-motion';
+import { AirtableProvider } from '../services/context/AirtableContext';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -36,7 +37,9 @@ export default function MyApp({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.35 }}
         >
-          <Component {...pageProps} />
+          <AirtableProvider>
+            <Component {...pageProps} />
+          </AirtableProvider>
         </motion.div>
       </main>
       <Container wrapperClass="bg-dark text-white pt-3 pb-0">

@@ -108,7 +108,7 @@ export default function Navbar() {
                   setIsMenuOpen(false);
                 }}
               >
-                {router.locale === 'ja' ? 'ステッカーの入手' : 'Get Sticker'}
+                {router.locale === 'ja' ? 'ステッカーの入手' : 'Get a sticker'}
               </a>
             </li>
             <li className="nav-item">

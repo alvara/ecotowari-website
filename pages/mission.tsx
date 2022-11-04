@@ -117,7 +117,7 @@ function Mission({ stickers, instagram }) {
 
       {/* Positive Impact */}
       <Container wrapperClass="d-flex  bg-2">
-        <Statistics stickers={stickers} />
+        <Statistics />
       </Container>
 
       {/* CTA */}

@@ -60,7 +60,7 @@ export default function Index({ stickers, instagram }) {
 
       {/* Ecotowari Positive Impact */}
       <Container wrapperClass="d-flex align-items-center bg-2 ">
-        <Statistics stickers={stickers} />
+        <Statistics />
       </Container>
 
       {/* CTA */}
