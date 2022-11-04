@@ -113,7 +113,6 @@ const Mission = ({ stickers }) => {
         <div className="row justify-content-center align-items-center pt-4">
           <div className="col-md-4">
             <StatisticCard
-              id="totalStickers"
               faIcon={faHouseUser}
               statistic={totalStickers(stickers)}
               description={
@@ -125,7 +124,6 @@ const Mission = ({ stickers }) => {
           </div>
           <div className="col-md-4">
             <StatisticCard
-              id="flyersReduced"
               faIcon={faTree}
               statistic={flyersReduced(stickers)}
               unit="kg"
@@ -138,7 +136,6 @@ const Mission = ({ stickers }) => {
           </div>
           <div className="col-md-4">
             <StatisticCard
-              id="waterSaved"
               faIcon={faWater}
               statistic={waterSaved(stickers)}
               unit="L"
@@ -149,7 +146,6 @@ const Mission = ({ stickers }) => {
           </div>
           <div className="col-md-4">
             <StatisticCard
-              id="electricitySaved"
               faIcon={faLightbulb}
               statistic={electricitySaved(stickers)}
               unit="KWh"
@@ -160,7 +156,6 @@ const Mission = ({ stickers }) => {
           </div>
           <div className="col-md-4">
             <StatisticCard
-              id="c02Saved"
               faIcon={faCloud}
               statistic={co2Saved(stickers)}
               unit="kg-CO2e"
