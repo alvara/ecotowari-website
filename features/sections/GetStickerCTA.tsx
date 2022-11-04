@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import MailingListForm from '../forms/MailingListForm';
 
 export default function GetStickerCTA() {
   const router = useRouter();
@@ -37,28 +38,7 @@ We will soon launch a crowdfunding campaign where you will be able to get your h
 詳細はメールにてアップデートしますので、ご希望の方は下記フォームにメールアドレスをお送りください。`}
         </pre>
         <div className="text-center mailingList">
-          <form
-            name="mailinglist"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            {/* You still need to add the hidden input with the form name to your JSX form */}
-            <input type="hidden" name="mailing-list-form" value="mailinglist" />
-
-            <div className="input-group">
-              <input
-                type="email"
-                name="email"
-                className={'w-100'}
-                placeholder="Email"
-              />
-
-              <button type="submit" className="btn ">
-                Send
-              </button>
-            </div>
-          </form>
+          <MailingListForm />
         </div>
       </div>
       <div className="bg-overlay"></div>
