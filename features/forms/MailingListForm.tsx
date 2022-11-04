@@ -1,15 +1,38 @@
-export default function MailingListForm() {
-  return (
-    <form name="mailinglist" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="mailinglist" />
+import axios from 'axios';
+import { FormEvent, useState } from 'react';
 
+export default function MailingListForm() {
+  const [email, setEmail] = useState('');
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    async function postEmail() {
+      try {
+        const data = await axios({
+          method: 'POST',
+          url: '/api/mailinglist/',
+          data: { email },
+        }).then((res) => {
+          console.log(res.data);
+          setEmail('');
+        });
+      } catch (error) {
+        console.log('Error submitting form..');
+      }
+    }
+    postEmail();
+  }
+
+  return (
+    <form name="mailinglist" onSubmit={(e) => handleSubmit(e)}>
       <div className="input-group">
         <input
           type="email"
           name="email"
-          id="youremail"
           className={'w-100'}
-          placeholder="Email"
+          placeholder="example@email.com"
+          onChange={(e) => setEmail(e.currentTarget.value)}
+          value={email}
         />
 
         <button type="submit" className="btn ">
