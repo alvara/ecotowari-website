@@ -11,14 +11,14 @@ export default function ContactForm() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    async function postEmail() {
+    async function postContact() {
       try {
         const data = await axios({
           method: 'POST',
           url: '/api/contact/',
           data: { email, message },
         }).then((res) => {
-          console.log(res.data);
+          console.log('success submit..');
           setEmail('');
           setMessage('');
           openModal();
@@ -27,7 +27,7 @@ export default function ContactForm() {
         console.log('Error submitting form..');
       }
     }
-    postEmail();
+    postContact();
   }
 
   const customStyles = {
@@ -61,6 +61,7 @@ export default function ContactForm() {
           name="email"
           className={'w-100'}
           placeholder="Email"
+          value={email}
           onChange={(e) => setEmail(e.currentTarget.value)}
         />
 
@@ -69,6 +70,7 @@ export default function ContactForm() {
           name="message"
           className={'w-100'}
           placeholder="Message"
+          value={message}
           onChange={(e) => setMessage(e.currentTarget.value)}
         />
 
@@ -86,7 +88,6 @@ export default function ContactForm() {
         ariaHideApp={false}
       >
         <h2>Success!</h2>
-        <div>Email Signup Success!</div>
       </Modal>
     </>
   );

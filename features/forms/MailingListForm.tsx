@@ -17,7 +17,7 @@ export default function MailingListForm() {
           url: '/api/mailinglist/',
           data: { email },
         }).then((res) => {
-          console.log(res.data);
+          console.log('success submit..');
           setEmail('');
           openModal();
         });
