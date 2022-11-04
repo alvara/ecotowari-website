@@ -7,7 +7,6 @@ import {
   co2Saved,
   flyersReduced,
 } from '../../utils/calculations';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouseUser,
   faWater,
@@ -15,9 +14,6 @@ import {
   faLightbulb,
   faCloud,
 } from '@fortawesome/free-solid-svg-icons';
-import useSWR from 'swr';
-import { ISticker } from '../../services/type';
-import axios from 'axios';
 import { StatisticCard } from '../../components/card/StatisticCard';
 import { AirtableContext } from '../../services/context/AirtableContext';
 
@@ -68,7 +64,6 @@ export default function Statistics() {
       <div className="row justify-content-center align-items-center pt-4">
         <div className="col-md-4">
           <StatisticCard
-            id="totalStickers"
             faIcon={faHouseUser}
             statistic={totalStickers(stickers)}
             description={
@@ -78,7 +73,6 @@ export default function Statistics() {
         </div>
         <div className="col-md-4">
           <StatisticCard
-            id="flyersReduced"
             faIcon={faTree}
             statistic={flyersReduced(stickers)}
             unit="kg"
@@ -91,7 +85,6 @@ export default function Statistics() {
         </div>
         <div className="col-md-4">
           <StatisticCard
-            id="waterSaved"
             faIcon={faWater}
             statistic={waterSaved(stickers)}
             unit="L"
@@ -102,7 +95,6 @@ export default function Statistics() {
         </div>
         <div className="col-md-4">
           <StatisticCard
-            id="electricitySaved"
             faIcon={faLightbulb}
             statistic={electricitySaved(stickers)}
             unit="KWh"
@@ -113,7 +105,6 @@ export default function Statistics() {
         </div>
         <div className="col-md-4">
           <StatisticCard
-            id="c02Saved"
             faIcon={faCloud}
             statistic={co2Saved(stickers)}
             unit="kg-CO2e"

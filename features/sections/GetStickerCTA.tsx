@@ -16,7 +16,7 @@ export default function GetStickerCTA() {
           <Image
             src="/stickerv1.png"
             width="500"
-            height="100"
+            height="125"
             layout="responsive"
             objectFit="contain"
             alt="Sticker Preview"
