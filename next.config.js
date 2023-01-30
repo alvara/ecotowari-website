@@ -10,7 +10,11 @@ module.exports = {
     defaultLocale: 'ja',
   },
   images: {
-    domains: ['via.placeholder.com', 'dl.airtable.com'],
+    domains: [
+      'via.placeholder.com',
+      'dl.airtable.com',
+      'v5.airtableusercontent.com',
+    ],
   },
   trailingSlash: true,
 };
