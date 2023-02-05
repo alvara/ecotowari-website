@@ -48,6 +48,8 @@ const Mission = ({ stickers }) => {
           mixed with important mail, how are flyers bad for the environment?
           Below you can see the impact of paper manufacturing.
         </p>
+        {/* TODO: add environmental section */}
+        {/* <EnvironmentImpact /> */}
         <p>
           As no official data is available on flyers, please note that the above
           only covers the paper manufacturing side of the operations. Printing
@@ -99,7 +101,7 @@ const Mission = ({ stickers }) => {
         </div>
       </Container>
 
-      <Container
+      {/* <Container
         wrapperClass="d-flex align-items-center bg-2"
         title="ecotowari in Numbers"
       >
@@ -165,7 +167,7 @@ const Mission = ({ stickers }) => {
             />
           </div>
         </div>
-      </Container>
+      </Container> */}
       {/* CTA */}
       <Container wrapperClass="header-wrapper d-flex align-items-center bg-3">
         <GetStickerCTA />
