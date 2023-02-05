@@ -28,7 +28,7 @@ export function totalStickers(stickers: ISticker[]): number {
 
 // returns avg weight of flyers wasted per day
 export function avgWastePerDay(): number {
-  const avgWastePerWeek = 85; // TODO: calc avg weight of flyers wasted per week through studies
+  const avgWastePerWeek = 100; // TODO: calc avg weight of flyers wasted per week through studies
   return avgWastePerWeek / 7;
 }
 
