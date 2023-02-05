@@ -51,7 +51,7 @@ const Mission = () => {
           member]
         </p>
       </Container> */}
-      <Container wrapperClass="d-flex align-items-center" title="Meet inigochi">
+      <Container wrapperClass="d-flex align-items-center" title="Meet Inigochi">
         <p>
           Inigo can be written as 1 2 5 in Japanese. Inigo’s parents picked this
           name in relation with the target 12.5 of the United Nations’
