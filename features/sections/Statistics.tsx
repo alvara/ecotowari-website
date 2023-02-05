@@ -25,12 +25,12 @@ export default function Statistics() {
   console.log('stickers from statistics: ', stickers);
 
   return (
-    <div id="portfolio" className="h-100 text-center justify-content-center">
+    <div id="portfolio" className="h-100  justify-content-center">
       <div className="row">
         <div className="offset-md-2 col-md-8">
-          <h2>
+          <h2 className="text-center">
             {router.locale === 'en'
-              ? 'ecotowari In numbers'
+              ? 'ecotowari in numbers'
               : '数字で見るecotowari'}
           </h2>
           <pre>

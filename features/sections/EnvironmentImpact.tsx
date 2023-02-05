@@ -19,57 +19,68 @@ export default function EnvironmentImpact({ data }) {
   return (
     <>
       <div className="row">
-        <div className="offset-md-2 col-md-8 text-center">
+        {/* <div className="offset-md-2 col-md-8 text-center">
           <span className="text-center preTitle">Why ecotowari</span>
           <h2>{data.title[router.locale]}</h2>
           <pre className="text-start">{data.content[router.locale]}</pre>
-        </div>
+        </div> */}
       </div>
       <div className="row">
         <div className="col-md-6 p-5 bg-primary">
-          <div className="d-flex align-items-center text-white">
-            <FontAwesomeIcon
-              icon={faDroplet}
-              size="lg"
-              className="environment-icon"
-            />
-            <h3 className="text-white">{data.watertitle[router.locale]}</h3>
+          <div className="d-flex flex-column align-items-center text-white">
+            <div className="w-25">
+              <FontAwesomeIcon
+                icon={faDroplet}
+                size="lg"
+                className="environment-icon"
+              />
+            </div>
+            <h4 className="text-white">
+              1kg of paper requires up to 100L of water to make.
+            </h4>
           </div>
-          <pre className="text-white">{data.water[router.locale]}</pre>
         </div>
         <div className="col-md-6 p-5 border">
-          <div className="d-flex align-items-center textiwhite">
-            <FontAwesomeIcon
-              icon={faLightbulb}
-              className="environment-icon text-primary"
-            />
-            <h3 className="text-primary">
-              {data.electricitytitle[router.locale]}
-            </h3>
+          <div className="d-flex  flex-column align-items-center textiwhite">
+            <div className="w-25">
+              <FontAwesomeIcon
+                icon={faLightbulb}
+                className="environment-icon text-primary"
+              />
+            </div>
+            <h4 className="text-primary">
+              It takes as much electricity to make 1kg of paper as it does to
+              run a LED light for 631 hours.
+            </h4>
           </div>
-          <pre className="text-primary">{data.electricity[router.locale]}</pre>
         </div>
         <div className="col-md-6 p-5 border">
-          <div className="d-flex align-items-center textiwhite">
-            <FontAwesomeIcon
-              icon={faFlask}
-              className="environment-icon text-primary"
-            />
-            <h3 className="text-primary">
-              {data.chemicalstitle[router.locale]}
-            </h3>
+          <div className="d-flex  flex-column align-items-center textiwhite">
+            <div className="w-25">
+              <FontAwesomeIcon
+                icon={faFlask}
+                className="environment-icon text-primary"
+              />
+            </div>
+            <h4 className="text-primary">
+              About 200 individual chemicals are typically used in the
+              papermaking process.
+            </h4>
           </div>
-          <pre className="text-primary">{data.chemicals[router.locale]}</pre>
         </div>
         <div className="col-md-6 p-5 bg-primary">
-          <div className="d-flex align-items-center textiwhite">
-            <FontAwesomeIcon
-              icon={faTree}
-              className="environment-icon text-white"
-            />
-            <h3 className="text-white">{data.woodtitle[router.locale]}</h3>
+          <div className="d-flex  flex-column align-items-center textiwhite">
+            <div>
+              <FontAwesomeIcon
+                icon={faTree}
+                className="environment-icon text-white"
+              />
+            </div>
+            <h4 className="text-white">
+              It takes as much electricity to make 1kg of paper as it does to
+              run a LED light for 631 hours.
+            </h4>
           </div>
-          <pre className="text-white">{data.wood[router.locale]}</pre>
         </div>
       </div>
     </>

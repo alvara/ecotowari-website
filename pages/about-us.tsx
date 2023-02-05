@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Container from '../components/Container';
 import HeroHeader from '../components/header/HeroHeader';
+import Image from 'next/image';
 
 // view all blog posts
 const Mission = () => {
@@ -51,7 +52,19 @@ const Mission = () => {
           member]
         </p>
       </Container> */}
-      <Container wrapperClass="d-flex align-items-center" title="Meet inigochi">
+      <Container wrapperClass="d-flex align-items-center" title="Meet Inigochi">
+        <div className="py-4">
+          <Image
+            src={'/inogochi-profile.png'}
+            width={250}
+            height={50}
+            layout="responsive"
+            objectFit="scale-down"
+            alt="test"
+            className=""
+            quality={30}
+          />
+        </div>
         <p>
           Inigo can be written as 1 2 5 in Japanese. Inigo’s parents picked this
           name in relation with the target 12.5 of the United Nations’

@@ -30,7 +30,7 @@ export default function GetStickerCTA() {
 
 Be an actor of change, adopt an ecotowari sticker and join a growing movement for climate action!
 
-We will soon launch a crowdfunding campaign where you will be able to get your hands on the ecotowari stickers so stay tuned for more information. Leave your email below and you will be the first to know when it launches in Q2 2022.`
+We will soon launch a crowdfunding campaign where you will be able to get your hands on the ecotowari stickers so stay tuned for more information. Leave your email below and you will be the first to know when it launches.`
             : `あなたのポストが不要なチラシで溢れていて、あなた自身、そして地球のためにアクションを起こしたい方、ecotowariステッカーが解決します！
 
 2022年前半にクラウドファンディングを開始予定で、リターンとしてecotowariステッカーをお送りします。

@@ -17,10 +17,10 @@ export default function ContactUs() {
           {router.locale === 'en'
             ? `If you have any questions or comments and you'd like to get in touch with the ecotowari team, please fill in the following form. 
 
-We will do our best to get back to within 3 business days. Thank you!`
+We will do our best to get back to as soon as we can. Thank you!`
             : `If you have any questions or comments and you'd like to get in touch with the ecotowari team, please fill in the following form. 
 
-We will do our best to get back to within 3 business days. Thank you!`}
+We will do our best to get back to as soon as we can. Thank you!`}
         </pre>
       </div>
       <div className="col-md-7">
